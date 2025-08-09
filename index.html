@@ -2,24 +2,202 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Stopwatch with Laps</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゆづみん | 明るく、楽しく、笑顔で！毎日役立つ情報を発信中</title>
+  <meta name="description" content="面白いプロジェクトの応援や学びを発信するゆづみんの公式ランディングページ。X でフォローして最新情報をチェック！">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:title" content="ゆづみん | 明るく、楽しく、笑顔で！毎日役立つ情報を発信中">
+  <meta property="og:description" content="面白いプロジェクトの応援や学びを発信するゆづみんの公式ランディングページ。X でフォローして最新情報をチェック！">
+  <meta property="og:image" content="/assets/ogp.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://example.com/">
+  <meta property="twitter:title" content="ゆづみん | 明るく、楽しく、笑顔で！毎日役立つ情報を発信中">
+  <meta property="twitter:description" content="面白いプロジェクトの応援や学びを発信するゆづみんの公式ランディングページ。X でフォローして最新情報をチェック！">
+  <meta property="twitter:image" content="/assets/ogp.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3ABFF8',  // bright blue
+            secondary: '#F9A8D4', // soft pink
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "ゆづみん",
+    "url": "https://example.com/",
+    "image": "/assets/avatar.png",
+    "sameAs": [
+      "https://twitter.com/kkk09azu_mmm",
+      "https://road-to-fire-since2022.com"
+    ]
+  }
+  </script>
 </head>
-<body>
-  <div class="container">
-    <h1 id="display">00:00:00.000</h1>
-    <div class="buttons">
-      <button id="startStop">Start</button>
-      <button id="lap" disabled>Lap</button>
-      <button id="reset" disabled>Reset</button>
-    </div>
-    <table id="laps">
-      <thead>
-        <tr><th>#</th><th>Lap</th><th>Total</th></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-<script src="script.js"></script>
+<body class="font-sans antialiased text-gray-800">
+  <header class="w-full">
+    <img src="/assets/banner.jpg" alt="ヒーローバナー" class="w-full h-48 sm:h-64 object-cover" loading="lazy" width="1280" height="360">
+  </header>
+
+  <main class="container mx-auto px-4 max-w-screen-md">
+    <!-- ---- Hero Section -->
+    <section class="flex flex-col sm:flex-row items-center justify-between py-16 sm:py-24 gap-8">
+      <div class="flex-1 text-center sm:text-left space-y-6">
+        <h1 class="text-3xl sm:text-4xl font-bold leading-tight">ゆづみん</h1>
+        <p class="text-lg sm:text-xl">明るく、楽しく、笑顔で！毎日役立つ情報を発信中</p>
+        <div class="flex justify-center sm:justify-start gap-4">
+          <a href="https://twitter.com/kkk09azu_mmm" class="px-6 py-3 rounded-2xl bg-primary text-white shadow transition duration-300 hover:opacity-90 focus-visible:ring-4 focus-visible:ring-primary/50" aria-label="Xでフォローする">Xでフォローする</a>
+          <a href="https://road-to-fire-since2022.com" class="px-6 py-3 rounded-2xl bg-secondary text-white shadow transition duration-300 hover:opacity-90 focus-visible:ring-4 focus-visible:ring-secondary/50" aria-label="ブログを見る">ブログを見る</a>
+        </div>
+      </div>
+      <div class="flex-1 flex justify-center sm:justify-end">
+        <img src="/assets/avatar.png" alt="プロフィールアイコン" class="w-40 h-40 rounded-full shadow-lg" loading="lazy" width="160" height="160">
+      </div>
+    </section>
+
+    <!-- ---- About Section -->
+    <section class="py-16 sm:py-24" id="about">
+      <h2 class="text-2xl font-semibold mb-6">自己紹介</h2>
+      <p class="mb-4">面白いプロジェクトの応援や学びを発信。ブログにも挑戦中。</p>
+      <p class="mb-4">広島県を拠点に、IT・ライフハック・投資の情報をシェアしています。</p>
+      <p class="mb-8">「明るく、楽しく、笑顔で！」をモットーに、毎日役立つコンテンツをお届けします。</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>IT・ガジェット最新情報の分かりやすい解説</li>
+        <li>実体験に基づく投資・副業のノウハウ</li>
+        <li>ポジティブマインドを引き出すライフハック</li>
+      </ul>
+    </section>
+
+    <!-- ---- Highlights Section -->
+    <section class="py-16 sm:py-24" id="highlights">
+      <h2 class="text-2xl font-semibold mb-10">活動ハイライト</h2>
+      <div class="grid gap-6 sm:grid-cols-2">
+        <article class="p-6 rounded-2xl shadow bg-white/60 backdrop-blur-md" aria-label="発信テーマ">
+          <div class="flex items-center gap-3 mb-4 text-primary">
+            <!-- Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8S3 16.418 3 12 7.03 4 12 4s9 3.582 9 8z" /></svg>
+            <h3 class="font-semibold">発信テーマ</h3>
+          </div>
+          <p>IT・投資・ライフハックを中心に毎日更新中。</p>
+        </article>
+        <article class="p-6 rounded-2xl shadow bg-white/60 backdrop-blur-md" aria-label="実績">
+          <div class="flex items-center gap-3 mb-4 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" /></svg>
+            <h3 class="font-semibold">実績</h3>
+          </div>
+          <p>X フォロワー 10,000+、ブログ月間 5 万 PV 達成。</p>
+        </article>
+        <article class="p-6 rounded-2xl shadow bg-white/60 backdrop-blur-md" aria-label="提供メニュー">
+          <div class="flex items-center gap-3 mb-4 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            <h3 class="font-semibold">提供メニュー</h3>
+          </div>
+          <p>記事広告、レビュー依頼、イベント登壇などお任せください。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ---- Social Proof Section -->
+    <section class="py-16 sm:py-24" id="social-proof">
+      <h2 class="text-2xl font-semibold mb-10">SNS & 実績</h2>
+      <div class="space-y-6">
+        <p class="text-lg"><a href="https://twitter.com/kkk09azu_mmm" class="text-primary underline">@kkk09azu_mmm</a> | フォロワー <span class="font-semibold">10,000+</span></p>
+        <blockquote class="border-l-4 border-primary pl-4 italic text-gray-600">「ゆづみんさんの記事で投資を始める勇気が湧きました！」 — ダミーユーザー</blockquote>
+      </div>
+    </section>
+
+    <!-- ---- FAQ Section -->
+    <section class="py-16 sm:py-24" id="faq">
+      <h2 class="text-2xl font-semibold mb-10">よくある質問</h2>
+      <div class="space-y-4">
+        <details class="p-4 rounded-2xl bg-white shadow" open>
+          <summary class="cursor-pointer font-semibold">質問1: どのような活動をしていますか？</summary>
+          <p class="mt-2">IT・投資・ライフハックに関する発信、講演、コンサルなどを行っています。</p>
+        </details>
+        <details class="p-4 rounded-2xl bg-white shadow">
+          <summary class="cursor-pointer font-semibold">質問2: 依頼方法を教えてください。</summary>
+          <p class="mt-2">下記お問い合わせフォームよりご連絡ください。</p>
+        </details>
+        <details class="p-4 rounded-2xl bg-white shadow">
+          <summary class="cursor-pointer font-semibold">質問3: コラボは可能ですか？</summary>
+          <p class="mt-2">はい。内容によって柔軟に対応しておりますのでお気軽にご相談ください。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ---- Contact Section -->
+    <section class="py-16 sm:py-24" id="contact">
+      <h2 class="text-2xl font-semibold mb-6">お問い合わせ</h2>
+      <form action="https://formspree.io/f/your-id" method="POST" class="space-y-4" id="contactForm" aria-label="お問い合わせフォーム">
+        <div>
+          <label for="name" class="block mb-1">お名前<span class="text-red-500">*</span></label>
+          <input id="name" name="name" type="text" required class="w-full p-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div>
+          <label for="email" class="block mb-1">メールアドレス<span class="text-red-500">*</span></label>
+          <input id="email" name="email" type="email" required class="w-full p-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div>
+          <label for="message" class="block mb-1">本文<span class="text-red-500">*</span></label>
+          <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        </div>
+        <button type="submit" class="px-6 py-3 rounded-2xl bg-primary text-white shadow transition duration-300 hover:opacity-90 focus-visible:ring-4 focus-visible:ring-primary/50">送信する</button>
+      </form>
+      <!-- Toast -->
+      <div id="toast" role="status" aria-live="polite" class="fixed bottom-4 inset-x-0 mx-auto w-max px-6 py-3 rounded-2xl bg-secondary text-white shadow-lg hidden">送信ありがとうございます！</div>
+    </section>
+  </main>
+
+  <!-- ---- Footer Section -->
+  <footer class="py-8 text-center text-sm bg-gray-50">
+    <p class="mb-2">&copy; 2025 ゆづみん. All rights reserved.</p>
+    <p class="space-x-4">
+      <a href="https://twitter.com/kkk09azu_mmm" class="text-primary underline">X</a>
+      <a href="https://road-to-fire-since2022.com" class="text-primary underline">ブログ</a>
+      <a href="mailto:hello@example.com" class="text-primary underline">メール</a>
+    </p>
+  </footer>
+
+  <!-- Minimal JS for toast & motion-reduce -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Normally we would submit via fetch; for demo just show toast
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 4000);
+      form.reset();
+    });
+
+    // Respect prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('*').forEach(el => el.classList.remove('transition', 'duration-300'));
+    }
+  </script>
 </body>
 </html>
